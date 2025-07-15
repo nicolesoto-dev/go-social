@@ -17,3 +17,6 @@ go.work.sum
 .env
 
 .vscode/
+
+tmp
+bin
