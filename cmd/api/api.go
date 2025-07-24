@@ -7,10 +7,12 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/nicolesoto-dev/go-social/internal/store"
 )
 
 type application struct {
-	config Config
+	config  Config
+	storage store.Storage
 }
 
 type Config struct {

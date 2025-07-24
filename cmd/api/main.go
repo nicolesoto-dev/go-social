@@ -11,9 +11,13 @@ func main() {
 		addr: env.GetString("ADDR", ":8081"),
 	}
 
+	store := store.NewStorage(nil)
+
 	app := &application{
-		config: cfg,
+		config:  cfg,
+		storage: store,
 	}
+
 	mux := app.mount()
 
 	log.Fatal(app.run(mux))

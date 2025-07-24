@@ -6,9 +6,9 @@ import (
 )
 
 func GetString(key, fallback string) string {
-	val, ok := os.LookupEnv(key)
+	val := os.Getenv(key)
 
-	if !ok {
+	if val == "" {
 		return fallback
 	}
 
@@ -16,8 +16,8 @@ func GetString(key, fallback string) string {
 }
 
 func GetInt(key string, fallback int) int {
-	val, ok := os.LookupEnv(key)
-	if !ok {
+	val := os.Getenv(key)
+	if val == "0" {
 		return fallback
 	}
 
